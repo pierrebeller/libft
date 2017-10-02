@@ -21,6 +21,24 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_point
+{
+	int				x;
+	int				y;
+}					t_point;
+
+typedef struct 		s_dpoint
+{
+	double			x;
+	double			y;
+}					t_dpoint;
+
+typedef	struct		s_dcomplex
+{
+	double			r;
+	double			i;
+}					t_dcomplex;
+
 int					get_next_line(const int fd, char **line);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 int					ft_isalnum(int c);
@@ -91,4 +109,8 @@ int					ft_size_int(int n);
 int					ft_is_lowercase(int c);
 int					ft_is_uppercase(int c);
 int					ft_lstlen(t_list *list);
+t_point				*ft_point(int x, int y);
+t_dpoint			*ft_dpoint(double x, double y);
+t_dcomplex			ft_dcomplex(double r, double i);
+int					ft_abs(int x);
 #endif

@@ -78,7 +78,11 @@ OBJ =	ft_putchar.o \
 		ft_is_lowercase.o \
 		ft_is_uppercase.o \
 		ft_lstlen.o \
-		get_next_line.o
+		get_next_line.o \
+		ft_point.o \
+		ft_dpoint.o \
+		ft_dcomplex.o \
+		ft_abs.o
 
 CC = gcc
 
