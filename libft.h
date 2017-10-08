@@ -27,7 +27,7 @@ typedef struct		s_point
 	int				y;
 }					t_point;
 
-typedef struct 		s_dpoint
+typedef struct		s_dpoint
 {
 	double			x;
 	double			y;

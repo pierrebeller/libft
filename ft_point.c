@@ -9,10 +9,11 @@
 /*   Updated: 2017/10/02 13:04:36 by pbeller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
 #include "libft.h"
 
-t_point *ft_point(int x, int y)
+t_point		*ft_point(int x, int y)
 {
 	t_point *pt;
 
