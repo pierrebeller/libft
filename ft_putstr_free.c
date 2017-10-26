@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbeller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 09:54:50 by pbeller           #+#    #+#             */
-/*   Updated: 2016/11/24 09:54:52 by pbeller          ###   ########.fr       */
+/*   Created: 2017/10/26 15:56:23 by pbeller           #+#    #+#             */
+/*   Updated: 2017/10/26 15:56:48 by pbeller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 #include <stdlib.h>
 
-char	*ft_strnew(size_t size)
+void		ft_putstr_free(char *str, int f)
 {
-	char *str;
-
-	str = (char *)ft_x_malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
-		return (NULL);
-	ft_bzero(str, size + 1);
-	return (str);
+	if (str)
+	{
+		write(1, str, ft_strlen(str));
+		if (f)
+			free(str);
+	}
 }

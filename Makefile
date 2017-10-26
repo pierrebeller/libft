@@ -82,7 +82,17 @@ OBJ =	ft_putchar.o \
 		ft_point.o \
 		ft_dpoint.o \
 		ft_dcomplex.o \
-		ft_abs.o
+		ft_abs.o\
+		ft_strchain.o\
+		ft_chrjoinfree.o\
+		ft_x_malloc.o\
+		ft_litoa.o\
+		ft_size_long.o\
+		ft_free_ret.o\
+		ft_putstr_free.o\
+		ft_putstr_clrd.o\
+		ft_putxchar.o\
+		ft_swap_char.o
 
 CC = gcc
 

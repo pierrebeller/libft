@@ -43,7 +43,7 @@ int					get_next_line(const int fd, char **line);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 int					ft_isalnum(int c);
 size_t				ft_strlen(const char *str);
-char				*ft_strdup(char *str);
+char				*ft_strdup(const char *str);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t len);
 char				*ft_strcat(char *s1, const char *s2);
@@ -113,4 +113,15 @@ t_point				*ft_point(int x, int y);
 t_dpoint			*ft_dpoint(double x, double y);
 t_dcomplex			ft_dcomplex(double r, double i);
 int					ft_abs(int x);
+char				*ft_strchain(int c, int len);
+char				*ft_chrjoinfree(char *s, const char c, int flag);
+void				*ft_x_malloc(int size);
+char				*ft_litoa(long long nbr);
+int					ft_size_long(long long n);
+int					ft_free_ret(void *data, int ret);
+void				ft_putstr_free(char *str, int f);
+void				ft_putstr_clrd(char *str, char *color);
+int					ft_putxchar(char c, int x);
+void				ft_swap_char(char **chr1, char **chr2);
+
 #endif

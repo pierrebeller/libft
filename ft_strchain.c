@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strchain.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbeller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 09:54:50 by pbeller           #+#    #+#             */
-/*   Updated: 2016/11/24 09:54:52 by pbeller          ###   ########.fr       */
+/*   Created: 2017/10/26 15:59:51 by pbeller           #+#    #+#             */
+/*   Updated: 2017/10/26 15:59:52 by pbeller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "../libft/libft.h"
 
-char	*ft_strnew(size_t size)
+char		*ft_strchain(int c, int len)
 {
-	char *str;
+	char	*ret;
+	int		i;
 
-	str = (char *)ft_x_malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
-		return (NULL);
-	ft_bzero(str, size + 1);
-	return (str);
+	i = 0;
+	ret = (char *)ft_memalloc(sizeof(char) * len + 1);
+	while (i < len)
+		ret[i++] = c;
+	ret[i] = '\0';
+	return (ret);
 }

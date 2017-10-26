@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_litoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbeller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 09:54:50 by pbeller           #+#    #+#             */
-/*   Updated: 2016/11/24 09:54:52 by pbeller          ###   ########.fr       */
+/*   Created: 2017/10/26 15:58:36 by pbeller           #+#    #+#             */
+/*   Updated: 2017/10/26 15:58:38 by pbeller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "./libft.h"
 
-char	*ft_strnew(size_t size)
+char		*ft_litoa(long long n)
 {
-	char *str;
+	size_t	i;
+	char	*str;
 
-	str = (char *)ft_x_malloc(sizeof(char) * (size + 1));
+	i = ft_size_long(n);
+	str = ft_strnew(i);
 	if (str == NULL)
 		return (NULL);
-	ft_bzero(str, size + 1);
+	if (n < 0)
+		str[0] = '-';
+	else
+		n = -n;
+	while (i >= 1 && str[i - 1] != '-')
+	{
+		str[--i] = -(n % 10) + '0';
+		n = n / 10;
+	}
 	return (str);
 }
